@@ -1,8 +1,8 @@
-package advent.day1
+package advent
 
 import days.day1.Day1
-import kotlin.test.assertEquals
 import org.junit.Test
+import kotlin.test.assertEquals
 
 class TestDay1 {
 

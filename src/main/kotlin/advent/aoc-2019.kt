@@ -1,7 +1,7 @@
 package advent
 
-import days.day1.Day1
+import days.day2.Day2
 
 fun main(args: Array<String>) {
-    println(Day1().solvePart1())
+    println(Day2().solvePart2())
 }

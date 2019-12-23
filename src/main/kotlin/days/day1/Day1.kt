@@ -5,7 +5,8 @@ import java.io.File
 
 class Day1(input: List<Int>? = null) : Day {
 
-    private val input = input ?: File("src/main/kotlin/inputs/input01.txt").readLines().map { it.toInt() }
+    private val input = input ?: File("src/main/kotlin/inputs/input01.txt")
+            .readLines().map { it.toInt() }
 
     override fun solvePart1() = input.sumBy { it / 3 - 2 }
     override fun solvePart2() = input.sumBy { recursiveSum(it) }
