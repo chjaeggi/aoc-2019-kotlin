@@ -1,3 +1,7 @@
+/**
+ * Quest can be found here:
+ * http://adventofcode.com/2019/day/3
+ */
 package advent
 
 import java.io.File
