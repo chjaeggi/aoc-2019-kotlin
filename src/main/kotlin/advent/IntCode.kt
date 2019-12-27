@@ -2,7 +2,7 @@ package advent
 
 import java.util.logging.Logger
 
-class IntCode(private var programm: Array<Int>,
+class IntCode(private var program: Array<Int>,
               memoryOne: Int? = null,
               memoryTwo: Int? = null) {
 
@@ -11,32 +11,32 @@ class IntCode(private var programm: Array<Int>,
     private var result = -1
 
     init {
-        programm[1] = memoryOne ?: programm[1]
-        programm[2] = memoryTwo ?: programm[2]
-        programm += Array<Int>(programm.size) { 0 } // double the size for extra memory
+        program[1] = memoryOne ?: program[1]
+        program[2] = memoryTwo ?: program[2]
+        program += Array<Int>(program.size) { 0 } // double the size for extra memory
     }
 
     fun start(startingInstruction: Int? = null): Int {
         while (!halted) {
-            val opCode = programm[pointer].toString().padStart(5, '0')
+            val opCode = program[pointer].toString().padStart(5, '0')
             val (arg1, arg2, arg3) = getArgumentAddress(opCode)
             when {
                 opCode.endsWith('1') -> {
-                    result = programm[arg1] + programm[arg2]
-                    programm[arg3] = result
+                    result = program[arg1] + program[arg2]
+                    program[arg3] = result
                     pointer += 4
                 }
                 opCode.endsWith('2') -> {
-                    result = programm[arg1] * programm[arg2]
-                    programm[arg3] = result
+                    result = program[arg1] * program[arg2]
+                    program[arg3] = result
                     pointer += 4
                 }
                 opCode.endsWith('3') -> {
-                    programm[arg1] = startingInstruction ?: 0
+                    program[arg1] = startingInstruction ?: 0
                     pointer += 2
                 }
                 opCode.endsWith('4') -> {
-                    result = programm[arg1]
+                    result = program[arg1]
                     pointer += 2
                 }
                 opCode.endsWith("99") -> {
@@ -44,7 +44,7 @@ class IntCode(private var programm: Array<Int>,
                 }
                 else -> {
                     Logger.getLogger(IntCode::class.java.name)
-                            .warning("Unexpected IntCode received with ${programm[pointer]}")
+                            .warning("Unexpected IntCode received with ${program[pointer]}")
                 }
             }
         }
@@ -56,7 +56,7 @@ class IntCode(private var programm: Array<Int>,
         val addresses = MutableList(3) { 0 }
 
         (paramModes.indices).map { index ->
-            if (paramModes[index] == '0') addresses[index] = programm[pointer + 1 + index]
+            if (paramModes[index] == '0') addresses[index] = program[pointer + 1 + index]
             else addresses[index] = pointer + 1 + index
         }
         return Triple(addresses[0], addresses[1], addresses[2])
