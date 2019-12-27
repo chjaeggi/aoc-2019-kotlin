@@ -12,13 +12,13 @@ class TestDay3 {
     private val wire2_2 = "U98,R91,D20,R16,D67,R40,U7,R15,U6,R7".split(",")
 
     @Test
-    fun testPart1() {
+    fun `Check wire intersection distance with sample input`() {
         assertEquals(159, Day3(listOf(wire1_1, wire2_1)).solvePart1())
         assertEquals(135, Day3(listOf(wire1_2, wire2_2)).solvePart1())
     }
 
     @Test
-    fun testPart2() {
+    fun `Check wire intersection shortest wire length with sample input`() {
         assertEquals(610, Day3(listOf(wire1_1, wire2_1)).solvePart2())
         assertEquals(410, Day3(listOf(wire1_2, wire2_2)).solvePart2())
     }
