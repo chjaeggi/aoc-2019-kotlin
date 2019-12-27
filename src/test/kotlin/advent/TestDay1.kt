@@ -1,6 +1,5 @@
 package advent
 
-import days.day1.Day1
 import org.junit.Test
 import kotlin.test.assertEquals
 

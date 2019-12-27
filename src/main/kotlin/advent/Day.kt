@@ -1,4 +1,4 @@
-package days
+package advent
 
 interface Day {
     fun solvePart1() : Any

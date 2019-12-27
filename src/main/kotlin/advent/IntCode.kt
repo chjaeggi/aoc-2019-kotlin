@@ -1,4 +1,4 @@
-package days.day2
+package advent
 
 import java.util.logging.Logger
 

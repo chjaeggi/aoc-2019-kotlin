@@ -1,11 +1,10 @@
-package days.day1
+package advent
 
-import days.Day
 import java.io.File
 
 class Day1(input: List<Int>? = null) : Day {
 
-    private val input = input ?: File("src/main/kotlin/inputs/input01.txt")
+    private val input = input ?: File(this::class.java.classLoader.getResource("input01.txt")!!.toURI())
             .readLines().map { it.toInt() }
 
     override fun solvePart1() = input.sumBy { it / 3 - 2 }
