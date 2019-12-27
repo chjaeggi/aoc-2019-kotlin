@@ -1,5 +1,7 @@
+import advent.Day2
 import advent.Day4
+import advent.Day5
 
 fun main(args: Array<String>) {
-    println(Day4().solvePart2())
+    println(Day5(startingInstruction = 1).solvePart1())
 }
