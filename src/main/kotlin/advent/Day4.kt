@@ -13,11 +13,10 @@ class Day4(input: List<Int>? = null) : Day {
                     .readText().split('-').map { it.toInt() }
 
 
-    override fun solvePart1(): Int {
-        return (bounds.first() until bounds.last()).filter {
-            !it.isDecreasing() && it.hasDoubleDigit()
-        }.count()
-    }
+    override fun solvePart1() = (bounds.first() until bounds.last()).count { !it.isDecreasing() && it.hasDoubleDigit() }
+
+    override fun solvePart2() =
+            (bounds.first() until bounds.last()).count { !it.isDecreasing() && it.hasExclusiveDoubleDigit() }
 
     private fun Int.isDecreasing(): Boolean {
         val digitArray = this.toString().toList().map { it.toString().toInt() }
@@ -31,5 +30,7 @@ class Day4(input: List<Int>? = null) : Day {
         return false
     }
 
-    override fun solvePart2() = 0
+    private fun Int.hasExclusiveDoubleDigit() =
+            this.toString().toList().map { it.toString().toInt() }.groupBy { it }.any { it.value.size == 2 }
+
 }
