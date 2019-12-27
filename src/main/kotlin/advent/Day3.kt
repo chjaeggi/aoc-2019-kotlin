@@ -27,9 +27,6 @@ class Day3(input: List<List<String>>? = null) : Day {
         intersections = wireCoords[0].intersect(wireCoords[1])
     }
 
-    override fun solvePart1() =
-            intersections.map { abs(it.first) + abs(it.second) }.min() ?: Int.MAX_VALUE
-
     private fun moveInstruction(direction: Char, distance: Int) = (0 until distance).map {
         newZero = when (direction) {
             'R' -> newZero.first + 1 to newZero.second
@@ -40,6 +37,9 @@ class Day3(input: List<List<String>>? = null) : Day {
         }
         newZero
     }
+
+    override fun solvePart1() =
+            intersections.map { abs(it.first) + abs(it.second) }.min() ?: Int.MAX_VALUE
 
     override fun solvePart2() = intersections.map {
         wireCoords[0].indexOf(it) + 1 + wireCoords[1].indexOf(it) + 1
