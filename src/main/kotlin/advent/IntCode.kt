@@ -39,6 +39,20 @@ class IntCode(private var program: Array<Int>,
                     result = program[arg1]
                     pointer += 2
                 }
+                opCode.endsWith('5') -> {
+                    if (program[arg1] != 0) pointer = program[arg2] else pointer += 3
+                }
+                opCode.endsWith('6') -> {
+                    if (program[arg1] == 0) pointer = program[arg2] else pointer += 3
+                }
+                opCode.endsWith('7') -> {
+                    if (program[arg1] < program[arg2]) program[arg3] = 1 else program[arg3] = 0
+                    pointer += 4
+                }
+                opCode.endsWith('8') -> {
+                    if (program[arg1] == program[arg2]) program[arg3] = 1 else program[arg3] = 0
+                    pointer += 4
+                }
                 opCode.endsWith("99") -> {
                     halted = true
                 }
