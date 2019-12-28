@@ -17,7 +17,7 @@ class Day5(input: List<Int>? = null,
             IntCode(input.toTypedArray(), startingMemory?.first, startingMemory?.second)
                     .start(startingInstruction ?: 0)
 
-    override fun solvePart2(): Int {
-        return -1
-    }
+    override fun solvePart2() =
+            IntCode(input.toTypedArray(), startingMemory?.first, startingMemory?.second)
+                    .start(startingInstruction ?: 0)
 }
