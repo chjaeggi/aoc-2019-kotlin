@@ -2,6 +2,7 @@
 My solutions for [Advent of Code challenges 2019](https://adventofcode.com/) in kotlin (JVM).
 
 [![Kotlin Version](https://img.shields.io/badge/kotlin-1.3.61-blue.svg)](http://kotlinlang.org/)
+[![CircleCI](https://circleci.com/gh/chjaeggi/aoc-2019-kotlin.svg?style=svg)](https://circleci.com/gh/chjaeggi/aoc-2019-kotlin)
 
 After solving about half of the challenges in [python (repo)](https://github.com/chjaeggi/aoc-2019-python), this one is my attempt at solving the challenges in Kotlin.
 Because this beautiful language comes off rather badly at the moment in my current job this is the perfect opportunity to get back at it by implementing various algorithms, hopefully even more elegantly than in python :-)
