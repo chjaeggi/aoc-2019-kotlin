@@ -6,7 +6,8 @@ My solutions for [Advent of Code challenges 2019](https://adventofcode.com/) in 
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 
 After solving about half of the challenges in [python (repo)](https://github.com/chjaeggi/aoc-2019-python), this one is my attempt at solving the challenges in Kotlin.
-Because this beautiful language comes off rather badly at the moment in my current job this is the perfect opportunity to get back at it by implementing various algorithms, hopefully even more elegantly than in python :-)
+Because this beautiful language comes off rather badly at the moment in my current job this is the perfect opportunity to get back at it by implementing various algorithms, hopefully even more elegantly than in python.
+I try to solve the riddles in a functional programming way (especially by relying on Kotlin's Collections) but you may still see a lot of procedureal code patterns as my brain is hard-wired this way ;-)
 
 Before I start I want to give a big shout out to [Todd Ginsberg](https://github.com/tginsberg/advent-2019-kotlin) whose solutions are very concise as well as idiomatic to read.
 It was when I saw his repository that I decided to go full Kotlin-mode (you may see some resemblance in our solutions).
