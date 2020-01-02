@@ -1,5 +1,5 @@
 ## Advent of Code 2019 Solutions in Kotlin
-My solutions for [Advent of Code challenges 2019](https://adventofcode.com/) in kotlin (JVM).
+My solutions for [Advent of Code challenges 2019](https://adventofcode.com/) in Kotlin (JVM).
 
 [![Kotlin Version](https://img.shields.io/badge/kotlin-1.3.61-blue.svg)](http://kotlinlang.org/)
 [![CircleCI](https://circleci.com/gh/chjaeggi/aoc-2019-kotlin.svg?style=svg)](https://circleci.com/gh/chjaeggi/aoc-2019-kotlin)
