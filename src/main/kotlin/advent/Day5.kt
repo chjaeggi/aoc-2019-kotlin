@@ -14,10 +14,10 @@ class Day5(input: List<Int>? = null,
             .readText().split(',').map { it.toInt() }
 
     override fun solvePart1() =
-            IntCode(input.toTypedArray(), startingMemory?.first, startingMemory?.second)
-                    .start(startingInstruction ?: 0)
+            IntCode(input.toIntArray(), startingMemory?.first, startingMemory?.second)
+                    .start(mutableListOf(startingInstruction ?: 0))
 
     override fun solvePart2() =
-            IntCode(input.toTypedArray(), startingMemory?.first, startingMemory?.second)
-                    .start(startingInstruction ?: 0)
+            IntCode(input.toIntArray(), startingMemory?.first, startingMemory?.second)
+                    .start(mutableListOf(startingInstruction ?: 0))
 }

@@ -1,7 +1,7 @@
 import advent.Day
-import advent.Day6
+import advent.Day7
 import java.io.File
 
 fun main(args: Array<String>) {
-    println(Day6(File(Day::class.java.classLoader.getResource("input06.txt")!!.toURI()).readLines()).solvePart2())
+    println(Day7(File(Day::class.java.classLoader.getResource("input07.txt")!!.toURI()).readText().split(',').map { it.toInt() }).solvePart1())
 }

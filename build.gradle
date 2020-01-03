@@ -21,6 +21,7 @@ repositories {
 
 dependencies {
   compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+  compile "com.marcinmoskala:DiscreteMathToolkit:1.0.3"
   testCompile "org.junit.jupiter:junit-jupiter-api:5.5.2"
   testCompile "org.jetbrains.kotlin:kotlin-test-junit:$kotlin_version"
 }

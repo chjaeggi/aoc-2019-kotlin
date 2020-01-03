@@ -13,12 +13,12 @@ class Day2(input: List<Int>? = null, private val startingParameters: Pair<Int, I
             .readText().split(',').map { it.toInt() }
 
     override fun solvePart1() =
-            IntCode(input.toTypedArray(), startingParameters?.first, startingParameters?.second).start()
+            IntCode(input.toIntArray(), startingParameters?.first, startingParameters?.second).start()
 
     override fun solvePart2(): Int {
         (0 until 100).forEach { noun ->
             (0 until 100).forEach { verb ->
-                if (IntCode(input.toTypedArray(), noun, verb).start() == 19690720) {
+                if (IntCode(input.toIntArray(), noun, verb).start() == 19690720) {
                     return 100 * noun + verb
                 }
             }

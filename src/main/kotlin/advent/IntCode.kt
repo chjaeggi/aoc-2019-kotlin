@@ -2,7 +2,7 @@ package advent
 
 import java.util.logging.Logger
 
-class IntCode(private var program: Array<Int>,
+class IntCode(private var program: IntArray,
               memoryOne: Int? = null,
               memoryTwo: Int? = null) {
 
@@ -13,10 +13,10 @@ class IntCode(private var program: Array<Int>,
     init {
         program[1] = memoryOne ?: program[1]
         program[2] = memoryTwo ?: program[2]
-        program += Array<Int>(program.size) { 0 } // double the size for extra memory
+        program += IntArray(program.size)  // double the size for extra memory
     }
 
-    fun start(startingInstruction: Int? = null): Int {
+    fun start(startingInstructions: MutableList<Int>? = null): Int {
         while (!halted) {
             val opCode = program[pointer].toString().padStart(5, '0')
             val (arg1, arg2, arg3) = getArgumentAddress(opCode)
@@ -32,7 +32,7 @@ class IntCode(private var program: Array<Int>,
                     pointer += 4
                 }
                 opCode.endsWith('3') -> {
-                    program[arg1] = startingInstruction ?: 0
+                    program[arg1] = startingInstructions?.removeAt(0) ?: error("no value provided but need one!")
                     pointer += 2
                 }
                 opCode.endsWith('4') -> {
