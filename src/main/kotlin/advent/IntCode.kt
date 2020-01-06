@@ -4,10 +4,11 @@ import java.util.logging.Logger
 
 class IntCode(private var program: IntArray,
               memoryOne: Int? = null,
-              memoryTwo: Int? = null) {
+              memoryTwo: Int? = null,
+              private val immediateReturnOnOutput: Boolean = false) {
 
     private var pointer = 0
-    private var halted = false
+    var halted = false
     private var result = -1
 
     init {
@@ -38,6 +39,7 @@ class IntCode(private var program: IntArray,
                 opCode.endsWith('4') -> {
                     result = program[arg1]
                     pointer += 2
+                    if (immediateReturnOnOutput) return result
                 }
                 opCode.endsWith('5') -> {
                     if (program[arg1] != 0) pointer = program[arg2] else pointer += 3
