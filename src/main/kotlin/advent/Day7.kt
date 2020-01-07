@@ -39,7 +39,6 @@ class Day7(input: List<Int>) : Day {
 
         var active = 0
         var output = 0
-        var result = 0
         val phaseSet = mutableMapOf(0 to false, 1 to false, 2 to false, 3 to false, 4 to false)
 
         while (!(intCodeMachines.last()).halted) {
@@ -50,11 +49,10 @@ class Day7(input: List<Int>) : Day {
             }
             args.add(output)
             output = intCodeMachines[active].start(args)
-            if (output > 0) result = output
             active += 1
             active %= 5
         }
-        return result
+        return output
     }
 
 }

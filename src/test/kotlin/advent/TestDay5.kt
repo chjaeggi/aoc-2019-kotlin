@@ -12,7 +12,8 @@ class TestDay5 {
 
     @Test
     fun `Check multiply sample instruction`() {
-        assertEquals(99, Day5(listOf(1002, 4, 3, 4, 33)).solvePart1())
+        // it only multiplies but doesn't output that, so output is still in initial
+        assertEquals(-1, Day5(listOf(1002, 4, 3, 4, 33)).solvePart1())
     }
 
     @Test

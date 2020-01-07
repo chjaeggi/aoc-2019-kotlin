@@ -23,13 +23,11 @@ class IntCode(private var program: IntArray,
             val (arg1, arg2, arg3) = getArgumentAddress(opCode)
             when {
                 opCode.endsWith('1') -> {
-                    result = program[arg1] + program[arg2]
-                    program[arg3] = result
+                    program[arg3] = program[arg1] + program[arg2]
                     pointer += 4
                 }
                 opCode.endsWith('2') -> {
-                    result = program[arg1] * program[arg2]
-                    program[arg3] = result
+                    program[arg3] = program[arg1] * program[arg2]
                     pointer += 4
                 }
                 opCode.endsWith('3') -> {
